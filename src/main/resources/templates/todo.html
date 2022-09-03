@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待辦事項</title>
+</head>
+<body>
+    <h1>TODO LIST</h1>
+    <div>
+        <p><strong>名稱: </strong><span th:text="${todo.todo}"></span></p>
+        <p><strong>完成: </strong><span th:text="${todo.isDone}"></span></p>
+        <p><strong>建立日期: </strong><span th:text="${todo.createDateTime}"></span></p>
+    </div>
+</body>
+</html>
