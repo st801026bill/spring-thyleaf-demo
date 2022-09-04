@@ -18,6 +18,8 @@ public class TodoListUpdateReqDto {
     public Boolean isDone;
 
     public TodoList toEntity() {
+        if(this.isDone == null)
+            this.isDone = false;
         return new TodoList(this.seqNo, this.todo, this.isDone);
     }
 }

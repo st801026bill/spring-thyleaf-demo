@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -24,6 +25,11 @@ public class TodoListDao {
 	}
 	
 	public TodoList save(TodoList content) {
+		if(content.getSeqNo() == null) content.setCreateDateTime(LocalDateTime.now());
+//		content.setIsDone(content.getIsDone() == true? false: true);
+		if(content.getCreateDateTime() == null)
+			content.setCreateDateTime(LocalDateTime.now());
+		content.setUpdateDateTime(LocalDateTime.now());
 		return repository.save(content);
 	}
 	
