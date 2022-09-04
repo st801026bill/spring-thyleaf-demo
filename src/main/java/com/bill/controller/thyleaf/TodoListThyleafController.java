@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 @Controller
 public class TodoListThyleafController {
 
@@ -15,13 +17,18 @@ public class TodoListThyleafController {
     private ConcurrentMapService mapService;
 
     @GetMapping("/thyleaf/todoList")
-    public String todoList() {
-           return "todoList";
+    public String todoList(Model model) {
+        List<TodoListQueryResDto> list = mapService.queryTodoList();
+        model.addAttribute("todoList", list);
+        return "todoList";
     }
 
-    @GetMapping("/thyleaf/map/{id}")
+    @GetMapping("/thyleaf/todo/{id}")
     public String todo(@PathVariable Integer id, Model model) {
         TodoListQueryResDto todo = mapService.queryTodo(id);
+
+        if(todo == null) todo = new TodoListQueryResDto();
+
         model.addAttribute("todo", todo);
         return "todo";
     }
