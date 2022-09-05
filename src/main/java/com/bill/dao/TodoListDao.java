@@ -27,7 +27,7 @@ public class TodoListDao {
 	public TodoList save(TodoList content) {
 		if(content.getSeqNo() == null) content.setCreateDateTime(LocalDateTime.now());
 //		content.setIsDone(content.getIsDone() == true? false: true);
-		if(content.getCreateDateTime() == null)
+		if(content.getCreateDateTime() != null)
 			content.setCreateDateTime(LocalDateTime.now());
 		content.setUpdateDateTime(LocalDateTime.now());
 		return repository.save(content);

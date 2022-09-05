@@ -29,9 +29,10 @@ public class H2Service implements IH2Service, ISubjectService {
     }
 
     @Override
-    public void updateTodoList(TodoListUpdateReqDto reqDto) {
-        todoListDao.save(reqDto.toEntity());
+    public TodoList updateTodoList(TodoListUpdateReqDto reqDto) {
+        TodoList todo = todoListDao.save(reqDto.toEntity());
         updateAllCache();
+        return todo;
     }
 
     @Override

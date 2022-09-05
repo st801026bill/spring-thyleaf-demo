@@ -4,6 +4,7 @@ import com.bill.dto.TodoListCreateReqDto;
 import com.bill.dto.TodoListDeleteReqDto;
 import com.bill.dto.TodoListUpdateReqDto;
 
+import com.bill.entity.TodoList;
 import com.bill.service.subject.H2Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,8 @@ public class TodoListService implements ITodoListService {
     public void createTodoList(TodoListCreateReqDto reqDto) { h2Service.createTodoList(reqDto); }
 
     @Override
-    public void updateTodoList(TodoListUpdateReqDto reqDto) {
-        h2Service.updateTodoList(reqDto);
+    public TodoList updateTodoList(TodoListUpdateReqDto reqDto) {
+        return h2Service.updateTodoList(reqDto);
     }
 
     @Override

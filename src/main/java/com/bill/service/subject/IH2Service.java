@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface IH2Service {
     void createTodoList(TodoListCreateReqDto reqDto);
-    void updateTodoList(TodoListUpdateReqDto reqDto);
+    TodoList updateTodoList(TodoListUpdateReqDto reqDto);
     void deleteTodoList(TodoListDeleteReqDto todoList);
 }

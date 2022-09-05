@@ -16,6 +16,11 @@
             </div>
         </nav>
         <hr>
+        <div class="alert alert-success alert-dismissable" th:unless="${#strings.isEmpty(message)}">
+<!--            <a href="#" class="close" data-dismiss="alert">&times;</a>-->
+            <strong>恭喜,</strong>
+            <span th:text="${message}">新增成功</span>
+        </div>
         <p class="text-end"><a href="#" th:href="@{/thyleaf/todo/input}" class="btn btn-secondary">新增</a></p>
         <div>
             <table class="table table-bordered table-striped table-hover">
