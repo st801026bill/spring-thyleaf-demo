@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -40,14 +41,14 @@ public class H2Service implements IH2Service {
     }
 
     @Override
-    public void deleteTodoList(TodoListDeleteReqDto reqDto) {
-        todoListDao.delete(reqDto.toEntity());
+    public void deleteTodoList(TodoList todo) {
+        todoListDao.delete(todo);
     }
 
     @Override
-    public Page<TodoList> queryTodoList(int page, int size) {
-        Sort sort = Sort.by(Sort.Direction.DESC, "seqNo");
-        return todoListDao.findAllByPage(PageRequest.of(page, size, sort));
+    public Page<TodoList> queryTodoList(Pageable pageable) {
+
+        return todoListDao.findAllByPage(pageable);
     }
 
     @Override

@@ -55,14 +55,15 @@
                         <td th:text="${todo.createDateTime}">建立日期</td>
                         <td th:text="${todo.updateDateTime}">修改日期</td>
                         <td>
-                            <a href="#" th:href="@{/thyleaf/todo/input/{id}(id=${todo.seqNo})}">更新</a>
+                            <a href="#" th:href="@{/thyleaf/todo/input/{id}(id=${todo.seqNo})}">更新</a>&nbsp;
+                            <a href="#" th:href="@{/thyleaf/todo/delete/{id}(id=${todo.seqNo})}">刪除</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#" th:if="${todoList.number gt 0 }" th:href="@{'/thyleaf/todoList?page='+ ${todoList.number-1}}">上一頁</a></li>
-                <li class="page-item"><a class="page-link" href="#" th:if="${todoList.number lt todoList.totalPages-1 }" th:href="@{/thyleaf/todoList(page=${todoList.number}+1)}">下一頁</a></li>
+                <li class="page-item"><a class="page-link" href="#" th:unless="${todoList.first}" th:href="@{'/thyleaf/todoList?page='+ ${todoList.number-1}}">上一頁</a></li>
+                <li class="page-item"><a class="page-link" href="#" th:unless="${todoList.last}" th:href="@{/thyleaf/todoList(page=${todoList.number}+1)}">下一頁</a></li>
             </ul>
         </div>
     </div>

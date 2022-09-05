@@ -21,8 +21,8 @@ public class TodoListDao {
 		return repository.findAll();
 	}
 
-	public Page<TodoList> findAllByPage(PageRequest pageRequest) {
-		return repository.findAll(pageRequest);
+	public Page<TodoList> findAllByPage(Pageable pageable) {
+		return repository.findAll(pageable);
 	}
 	
 	public TodoList findBySeqNo(int seqNo) {

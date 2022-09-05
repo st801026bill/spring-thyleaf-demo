@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TodoListDeleteReqDto {
     @Schema(description = "seqNo", required = true, example = "1")
-    public Integer seqNo;
+    private Integer seqNo;
 
     public TodoList toEntity() {
         return new TodoList(this.seqNo);

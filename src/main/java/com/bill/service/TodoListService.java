@@ -7,6 +7,7 @@ import com.bill.service.subject.H2Service;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,13 +27,13 @@ public class TodoListService implements ITodoListService {
     }
 
     @Override
-    public void deleteTodo(TodoListDeleteReqDto reqDto) {
-        h2Service.deleteTodoList(reqDto);
+    public void deleteTodo(Integer seqNo) {
+        h2Service.deleteTodoList(new TodoList(seqNo));
     }
 
     @Override
-    public Page<TodoList> queryTodoList(int page, int size) {
-        return h2Service.queryTodoList(page, size);
+    public Page<TodoList> queryTodoList(Pageable pageable) {
+        return h2Service.queryTodoList(pageable);
     }
 
     @Override

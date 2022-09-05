@@ -1,4 +1,4 @@
-package com.bill.controller.restful;
+package com.bill.controller;
 
 import com.bill.dto.TodoListCreateReqDto;
 import com.bill.dto.TodoListDeleteReqDto;
@@ -36,7 +36,7 @@ public class TodoListController {
     @Operation(summary = "代辦事項刪除", description = "代辦事項刪除")
     @DeleteMapping("/todo")
     public String deleteTodo(@RequestBody TodoListDeleteReqDto reqDto) {
-        service.deleteTodo(reqDto);
+        service.deleteTodo(reqDto.getSeqNo());
         return "send message success";
     }
 }
