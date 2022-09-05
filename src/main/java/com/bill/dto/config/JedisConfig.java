@@ -1,4 +1,4 @@
-package com.bill.config;
+package com.bill.dto.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

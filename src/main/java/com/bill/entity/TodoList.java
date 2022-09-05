@@ -42,8 +42,6 @@ public class TodoList implements Serializable {
 		public TodoList(String todo, Boolean isDone) {
 				this.todo = todo;
 				this.isDone = isDone;
-				this.createDateTime = LocalDateTime.now();
-				this.updateDateTime = LocalDateTime.now();
 		}
 
 		public TodoList(Integer seqNo) {

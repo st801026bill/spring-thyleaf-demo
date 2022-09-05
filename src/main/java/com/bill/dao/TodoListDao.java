@@ -4,6 +4,7 @@ import com.bill.entity.TodoList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
@@ -17,18 +18,21 @@ public class TodoListDao {
 	private TodoListRepository repository;
 	
 	public List<TodoList> findAll() {
-			return repository.findAll();
+		return repository.findAll();
+	}
+
+	public Page<TodoList> findAllByPage(PageRequest pageRequest) {
+		return repository.findAll(pageRequest);
 	}
 	
-	public List<TodoList> findBySeqNo(int seqNo) {
+	public TodoList findBySeqNo(int seqNo) {
 		return repository.findBySeqNo(seqNo); 
 	}
 	
 	public TodoList save(TodoList content) {
-		if(content.getSeqNo() == null) content.setCreateDateTime(LocalDateTime.now());
-//		content.setIsDone(content.getIsDone() == true? false: true);
-		if(content.getCreateDateTime() != null)
+		if(content.getSeqNo() == null)
 			content.setCreateDateTime(LocalDateTime.now());
+//		content.setIsDone(content.getIsDone() == true? false: true);
 		content.setUpdateDateTime(LocalDateTime.now());
 		return repository.save(content);
 	}

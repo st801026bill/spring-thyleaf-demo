@@ -21,7 +21,7 @@
             <strong>恭喜,</strong>
             <span th:text="${message}">新增成功</span>
         </div>
-        <p class="text-end"><a href="#" th:href="@{/thyleaf/todo/input}" class="btn btn-secondary">新增</a></p>
+        <p class="text-end" style="float:right"><a href="#" th:href="@{/thyleaf/todo/input}" class="btn btn-secondary">新增</a></p>
         <div>
             <table class="table table-bordered table-striped table-hover">
                 <thead>
@@ -42,7 +42,7 @@
                          even/odd: 偶數/奇數
                          first/last: 第一/最後
                      -->
-                    <tr th:each="todo,iterStat:${todoList}">
+                    <tr th:each="todo,iterStat:${todoList.content}">
     <!--                    th:class="${iterStat.even}? 'bg-danger p-2':'bg-success p-2'"-->
     <!--                    style="&#45;&#45;bs-bg-opacity: .5;">-->
     <!--                    <td><a href="#" th:text="${todo.todo}" th:href="@{/thyleaf/todo/{id}(id=${todo.seqNo})}"></a></td>-->
@@ -60,6 +60,10 @@
                     </tr>
                 </tbody>
             </table>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#" th:if="${todoList.number gt 0 }" th:href="@{'/thyleaf/todoList?page='+ ${todoList.number-1}}">上一頁</a></li>
+                <li class="page-item"><a class="page-link" href="#" th:if="${todoList.number lt todoList.totalPages-1 }" th:href="@{/thyleaf/todoList(page=${todoList.number}+1)}">下一頁</a></li>
+            </ul>
         </div>
     </div>
 
