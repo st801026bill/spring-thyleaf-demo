@@ -22,9 +22,14 @@
   <optional>true</optional>
 </dependency>
 ```
+Devtool啟用設定
+![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/devtool1.png)
+![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/devtool2.png)
+
 ### 2. 基本語法
 參考 https://www.thymeleaf.org/index.html
 
 **C. Demo**  
 ---  
 1. open broswer & enter`http://localhost:9000/thymeleaf/todoList`
+![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/thymeleaf.png)
