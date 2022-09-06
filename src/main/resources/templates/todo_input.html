@@ -15,7 +15,7 @@
             </div>
         </nav>
         <div class="p-3 mb-2 bg-secondary" style="--bs-bg-opacity: .5;">
-            <form action="#" th:action="@{/thyleaf/todo}" th:object="${todo}" method="post">
+            <form action="#" th:action="@{/thymeleaf/todo}" th:object="${todo}" method="post">
                 <input type="text" name="seqNo" id="seqNo" class="form-control" th:field="*{seqNo}" style="display:none">
                 <div class="form-group">
                     <label for="todo">名稱</label>

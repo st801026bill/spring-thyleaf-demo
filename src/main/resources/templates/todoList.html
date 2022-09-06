@@ -21,7 +21,7 @@
             <strong>恭喜,</strong>
             <span th:text="${message}">新增成功</span>
         </div>
-        <p class="text-end" style="float:right"><a href="#" th:href="@{/thyleaf/todo/input}" class="btn btn-secondary">新增</a></p>
+        <p class="text-end" style="float:right"><a href="#" th:href="@{/thymeleaf/todo/input}" class="btn btn-secondary">新增</a></p>
         <div>
             <table class="table table-bordered table-striped table-hover">
                 <thead>
@@ -45,25 +45,25 @@
                     <tr th:each="todo,iterStat:${todoList.content}">
     <!--                    th:class="${iterStat.even}? 'bg-danger p-2':'bg-success p-2'"-->
     <!--                    style="&#45;&#45;bs-bg-opacity: .5;">-->
-    <!--                    <td><a href="#" th:text="${todo.todo}" th:href="@{/thyleaf/todo/{id}(id=${todo.seqNo})}"></a></td>-->
+    <!--                    <td><a href="#" th:text="${todo.todo}" th:href="@{/thymeleaf/todo/{id}(id=${todo.seqNo})}"></a></td>-->
                         <td th:text="${iterStat.count}">#</td>
                         <td th:switch="${todo.isDone}">
                             <span th:case="true"><input class="form-check-input" type="checkbox" value="" checked disabled></span>
                             <span th:case="false"><input class="form-check-input" type="checkbox" value="" disabled></span>
                         </td>
-                        <td><a href="#" th:text="${todo.todo}" th:href="@{'/thyleaf/todo/' + ${todo.seqNo}}"></a></td>
+                        <td><a href="#" th:text="${todo.todo}" th:href="@{'/thymeleaf/todo/' + ${todo.seqNo}}"></a></td>
                         <td th:text="${todo.createDateTime}">建立日期</td>
                         <td th:text="${todo.updateDateTime}">修改日期</td>
                         <td>
-                            <a href="#" th:href="@{/thyleaf/todo/input/{id}(id=${todo.seqNo})}">更新</a>&nbsp;
-                            <a href="#" th:href="@{/thyleaf/todo/delete/{id}(id=${todo.seqNo})}">刪除</a>
+                            <a href="#" th:href="@{/thymeleaf/todo/input/{id}(id=${todo.seqNo})}">更新</a>&nbsp;
+                            <a href="#" th:href="@{/thymeleaf/todo/delete/{id}(id=${todo.seqNo})}">刪除</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#" th:unless="${todoList.first}" th:href="@{'/thyleaf/todoList?page='+ ${todoList.number-1}}">上一頁</a></li>
-                <li class="page-item"><a class="page-link" href="#" th:unless="${todoList.last}" th:href="@{/thyleaf/todoList(page=${todoList.number}+1)}">下一頁</a></li>
+                <li class="page-item"><a class="page-link" href="#" th:unless="${todoList.first}" th:href="@{'/thymeleaf/todoList?page='+ ${todoList.number-1}}">上一頁</a></li>
+                <li class="page-item"><a class="page-link" href="#" th:unless="${todoList.last}" th:href="@{/thymeleaf/todoList(page=${todoList.number}+1)}">下一頁</a></li>
             </ul>
         </div>
     </div>
