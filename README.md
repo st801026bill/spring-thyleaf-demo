@@ -23,12 +23,17 @@
   <optional>true</optional>
 </dependency>
 ```
-**Devtool啟用設定**
+**Devtool啟用設定**  
+intellij idea 啟用後端自動重啟
 ![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/devtool1.png)
 ![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/devtool2.png)
 
+chrome 安裝 livereload 啟用前端自動刷新
+![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/livereload.png)
+
 ### 2. thyleaf 基本語法
 參考 https://www.thymeleaf.org/index.html
+
 
 **C. Demo**  
 ---  
