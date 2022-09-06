@@ -9,7 +9,7 @@
 
 **B. thyleaf配置**  
 ---
-### 1. 基本配置
+### 1. thyleaf & devtool 基本配置
 ```sql
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -26,7 +26,7 @@ Devtool啟用設定
 ![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/devtool1.png)
 ![image](https://github.com/st801026bill/spring-thymeleaf-demo/blob/master/image/devtool2.png)
 
-### 2. 基本語法
+### 2. thyleaf 基本語法
 參考 https://www.thymeleaf.org/index.html
 
 **C. Demo**  
